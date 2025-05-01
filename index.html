@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>KiraKiraCurve</title>
+  <title>Style Inspo - KiraKiraCurve</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
+    /* Gradient background */
     body {
-      margin: 0;
-      background-color: #FFC7E0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      color: #9176FF;
+      background: linear-gradient(135deg, #FF94C2, #FFD9E6);
     }
 
     header {
       padding: 30px 20px 10px;
+      text-align: center;
     }
 
     header h1 {
@@ -26,8 +27,10 @@
       margin: 10px 0 30px;
     }
 
+    /* Navigation styling */
     nav {
       margin-bottom: 40px;
+      text-align: center;
     }
 
     nav a {
@@ -42,6 +45,7 @@
       text-decoration: underline;
     }
 
+    /* Gallery section styling */
     .gallery {
       display: flex;
       flex-direction: column;
@@ -87,6 +91,38 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px 0;
+      background-color: #FFD9E6;
+    }
+
+    footer p {
+      font-size: 1em;
+      color: #9176FF;
+    }
   </style>
 </head>
 <body>
@@ -96,30 +132,56 @@
   <p>fashion for every body</p>
 </header>
 
-<nav>
-  <a href="#">home</a>
-  <a href="#">about</a>
-  <a href="#">products</a>
-  <a href="#">contact</a>
+<nav id="navbar">
+  <a href="index.html">home</a>
+  <a href="about.html">about</a>
+  <a href="products.html">shop looks</a>
+  <a href="contact.html">contact us</a>
+  <a href="gallery.html">style inspo</a>
 </nav>
 
-<div class="gallery">
-  <div class="circle">
-    <img src="https://i.pinimg.com/736x/ff/01/30/ff0130ed6fea4b5d5830473a80cbc0b5.jpg" alt="Gyaru Style 1">
-  </div>
-  <div class="bottom-row">
+<main class="content">
+  <h2>Style Inspo</h2>
+  <p>Get inspired by our favorite gyaru looks! These styles show off confidence, cuteness, and plenty of sparkle. ✨</p>
+
+  <div class="gallery">
     <div class="circle">
-      <img src="https://www.thespoiledqueen.com/wp-content/uploads/2013/12/styletravelling62.jpg" alt="Gyaru Style 2">
+      <img src="https://i.pinimg.com/736x/ff/01/30/ff0130ed6fea4b5d5830473a80cbc0b5.jpg" alt="Gyaru Style 1" class="lightbox-trigger">
     </div>
-    <div class="circle">
-      <img src="https://i.pinimg.com/474x/f9/41/16/f941161f73008356e18f663bb918f043.jpg" alt="Gyaru Style 3">
+    <div class="bottom-row">
+      <div class="circle">
+        <img src="https://www.thespoiledqueen.com/wp-content/uploads/2013/12/styletravelling62.jpg" alt="Gyaru Style 2" class="lightbox-trigger">
+      </div>
+      <div class="circle">
+        <img src="https://i.pinimg.com/474x/f9/41/16/f941161f73008356e18f663bb918f043.jpg" alt="Gyaru Style 3" class="lightbox-trigger">
+      </div>
     </div>
   </div>
+</main>
+
+<!-- Lightbox modal -->
+<div class="lightbox">
+  <img src="" alt="Gyaru Style Lightbox">
 </div>
 
-<div class="tagline">
-  Express yourself with bold and trendy gyaru fashion! Our collection is designed for confidence and fun. 🌟
-</div>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 KiraKiraCurve. All rights reserved.</p>
+</footer>
+
+<script>
+  // Lightbox functionality
+  $('.lightbox-trigger').on('click', function() {
+    var imgSrc = $(this).attr('src');
+    $('.lightbox img').attr('src', imgSrc);
+    $('.lightbox').fadeIn();
+  });
+
+  // Close lightbox when clicked
+  $('.lightbox').on('click', function() {
+    $(this).fadeOut();
+  });
+</script>
 
 </body>
 </html>

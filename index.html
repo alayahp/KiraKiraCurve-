@@ -5,11 +5,19 @@
   <title>Style Inspo - KiraKiraCurve</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    /* Gradient background */
+    /* Center the body content */
     body {
-      background: linear-gradient(135deg, #FF94C2, #FFD9E6);
+      margin: 0;
+      background: linear-gradient(to right, #FFC7E0, #B3C8FF, #FFFD79); /* Gradient: Pink, Blue, Yellow */
+      font-family: 'Bubblegum Sans', sans-serif;
+      color: #9176FF;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full screen height */
     }
 
     header {
@@ -27,16 +35,16 @@
       margin: 10px 0 30px;
     }
 
-    /* Navigation styling */
     nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
       margin-bottom: 40px;
-      text-align: center;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
       font-size: 1.2em;
       font-weight: bold;
     }
@@ -45,7 +53,12 @@
       text-decoration: underline;
     }
 
-    /* Gallery section styling */
+    .content {
+      text-align: center;
+      max-width: 1000px;
+      margin-top: 20px;
+    }
+
     .gallery {
       display: flex;
       flex-direction: column;
@@ -63,7 +76,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: 0.3s ease;
     }
 
@@ -91,38 +104,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
-    /* Lightbox styles */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-
-    /* Footer styles */
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      padding: 20px 0;
-      background-color: #FFD9E6;
-    }
-
-    footer p {
-      font-size: 1em;
-      color: #9176FF;
-    }
   </style>
 </head>
 <body>
@@ -146,42 +127,19 @@
 
   <div class="gallery">
     <div class="circle">
-      <img src="https://i.pinimg.com/736x/ff/01/30/ff0130ed6fea4b5d5830473a80cbc0b5.jpg" alt="Gyaru Style 1" class="lightbox-trigger">
+      <img src="https://i.pinimg.com/736x/ff/01/30/ff0130ed6fea4b5d5830473a80cbc0b5.jpg" alt="Gyaru Style 1">
     </div>
     <div class="bottom-row">
       <div class="circle">
-        <img src="https://www.thespoiledqueen.com/wp-content/uploads/2013/12/styletravelling62.jpg" alt="Gyaru Style 2" class="lightbox-trigger">
+        <img src="https://www.thespoiledqueen.com/wp-content/uploads/2013/12/styletravelling62.jpg" alt="Gyaru Style 2">
       </div>
       <div class="circle">
-        <img src="https://i.pinimg.com/474x/f9/41/16/f941161f73008356e18f663bb918f043.jpg" alt="Gyaru Style 3" class="lightbox-trigger">
+        <img src="https://acdcrag.com/cdn/shop/products/1_919e123c-079b-45a3-b4e0-fe22491ce4f6_800x.jpg?v=1652676108" alt="Decora Fashion">
       </div>
     </div>
   </div>
 </main>
 
-<!-- Lightbox modal -->
-<div class="lightbox">
-  <img src="" alt="Gyaru Style Lightbox">
-</div>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 KiraKiraCurve. All rights reserved.</p>
-</footer>
-
-<script>
-  // Lightbox functionality
-  $('.lightbox-trigger').on('click', function() {
-    var imgSrc = $(this).attr('src');
-    $('.lightbox img').attr('src', imgSrc);
-    $('.lightbox').fadeIn();
-  });
-
-  // Close lightbox when clicked
-  $('.lightbox').on('click', function() {
-    $(this).fadeOut();
-  });
-</script>
-
 </body>
 </html>
+
